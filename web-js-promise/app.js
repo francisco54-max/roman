@@ -11,3 +11,8 @@ resPromesa.then(
 )
 
 document.getElementById("p_resultado").innerHTML = "Hola mundo";
+
+let bob = a => a+100;
+console.log(bob(5));
+
+bob = function(a){return a+100;}
