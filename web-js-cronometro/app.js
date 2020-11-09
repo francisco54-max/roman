@@ -2,7 +2,7 @@ let contador = 0;
 let objetoTimer;
 
 function empezarCrono(){
-    setInterval(aumentarCrono,1000);
+    setInterval(aumentarCrono,100);
 }
 
 function aumentarCrono(){
