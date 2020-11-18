@@ -76,3 +76,91 @@ console.log(nombreMujeres);
 let nombrecortos = nombreMujeres.filter( nombre => nombre.length <5);
 
 console.log(nombrecortos);
+
+// function reduce
+
+let arrayNumeros= [4,5,6,23,2,16,8,7];
+let suma = arrayNumeros.reduce( (a,b) => a+b);console.log(suma);
+
+console.log(suma);
+
+let n = 2;
+let esPar = (n%2==0) ?true:false;
+
+if (n%2 == 0){
+    esPar = true;
+}else{
+    esPar = false;
+}
+console.log("n es dos? "+ (n==2?"Si":"No"));
+
+let maximo = arrayNumeros.reduce((a,b) => a>b?a:b);
+console.log(maximo);
+
+let avg = suma/arrayNumeros.length;
+console.log(avg);
+
+let numerosordenados = arrayNumeros.sort(comparacion);
+console.log(numerosordenados);
+
+function comparacion(x,y){
+    if(x<y){
+        return -1;
+    }else if(x>y){
+        return 1;
+    }else{
+        return 0;
+    }
+}
+
+let coches = [
+    {
+        "marca": "Fiat",
+        "modelo": "Uno",
+        "anyo": 1990
+    },
+    {
+        "marca": "Fiat",
+        "modelo": "Punto",
+        "anyo": 1995
+    },
+    {
+        "marca": "Citroen",
+        "modelo": "AX",
+        "anyo": 1991
+    },
+    {
+        "marca": "Volvo",
+        "modelo": "S80",
+        "anyo": 1989
+    }
+]
+let cochesOrdenados = coches.sort(
+    
+    function(coche1,coche2){
+        if (coche1.anyo < coche2.anyo){
+            return -1;
+        }else if (coche1.anyo > coche2.anyo){
+            return 1;
+        }else{
+            return 0;
+        }
+    }
+);
+
+console.log(cochesOrdenados2);
+
+let cochesOrdenados2 = coches.sort(
+    
+    function(coche1,coche2){
+        if (coche1.marca < coche2.marca){
+            return -1;
+        }else if (coche1.marca > coche2.marca){
+            return 1;
+        }else{
+            return 0;
+        }
+    }
+);
+
+console.log(cochesOrdenados2);
