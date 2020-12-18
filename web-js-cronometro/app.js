@@ -2,13 +2,25 @@ let contador = 0;
 let objetoTimer;
 
 function empezarCrono(){
-    setInterval(aumentarCrono,1000);
+    objetoTimer=setInterval(aumentarCrono,100);
 }
+
+function empezarConCuentaAtras(){
+ let myPromise = new Promise ( function(CuentaAtras) {
+    document.getElementById("cuentaatras").innerHTML = contador;
+    if(totalTime==0){
+        alert("Final");
+    }else{
+        totalTime-=1;
+        setTimeout("CuentaAtras",100);
+    }
+}
+}
+
 
 function aumentarCrono(){
     contador++;
     document.getElementById("crono").innerHTML = contador;
-    
 }
 
 function pararCrono(){

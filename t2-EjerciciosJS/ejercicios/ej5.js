@@ -8,6 +8,7 @@ alert("Empieza el ejercicio 5");
  typeof variable1 es equivalente a typeof(variable1)
 
  typeof 2
+<<<<<<< HEAD
  //--> Respuesta: number
   
  typeof "Hola Mundo"
@@ -24,13 +25,35 @@ alert("Empieza el ejercicio 5");
  typeof {"propiedad": "valor"}
  typeof({"propiedad": "valor"})
  //--> Respuesta: "object"
+=======
+ //--> Respuesta: 
+  
+ typeof "Hola Mundo"
+ //--> Respuesta:
+ 
+ typeof [2,3]
+ typeof([2,3])
+ //--> Respuesta: 
+ 
+ typeof 2.3
+ typeof(2.3)
+ //--> Respuesta: 
+
+ typeof {"propiedad": "valor"}
+ typeof({"propiedad": "valor"})
+ //--> Respuesta: 
+>>>>>>> 083c977da18e3fb29ad80490cdcb9eb6a6f68b5b
 
 
  // En este caso ejecuta primero esta línea
  let objeto1 = { "propiedad1": "valor", "propiedad2": 25.34, "propiedad3": true }
  // y luego esta otra:
  typeof objeto1
+<<<<<<< HEAD
  //--> Respuesta: "object"
+=======
+ //--> Respuesta: 
+>>>>>>> 083c977da18e3fb29ad80490cdcb9eb6a6f68b5b
 
 */
 
@@ -53,7 +76,11 @@ alert("Empieza el ejercicio 5");
 
 function suma(op1, op2) {
     let resultado = undefined;
+<<<<<<< HEAD
     if ( typeof(op1) !== "number" || typeof(op2) !== "number") {
+=======
+    if ( /*Sustituye este comentario por tu condición*/ ) {
+>>>>>>> 083c977da18e3fb29ad80490cdcb9eb6a6f68b5b
         throw `error funcion suma(parametro1, parametro2):
     Ambos parámetros deben ser número: 
      -El primer parámetro es ${typeof op1}
@@ -63,7 +90,11 @@ function suma(op1, op2) {
     }
     alert("Resultado: "+resultado);
     return resultado;
+<<<<<<< HEAD
 }
 
 
 console.log(suma(2,{n:4}));
+=======
+}
+>>>>>>> 083c977da18e3fb29ad80490cdcb9eb6a6f68b5b

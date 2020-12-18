@@ -33,6 +33,7 @@ deberá mostrar error en la edad y en la propiedad "casado".
 */
 
 function comprobarPersona(p) {
+<<<<<<< HEAD
   let ret = true;
   if (typeof p.nombre !== "string") {
     console.error(`La propiedad nombre es un ${typeof p.nombre} y se esperaba un string`);
@@ -78,4 +79,8 @@ let persona3 = {
 console.log(comprobarPersona(persona1));
 console.log(comprobarPersona(persona2));
 console.log(comprobarPersona(persona3));
+=======
+
+}
+>>>>>>> 083c977da18e3fb29ad80490cdcb9eb6a6f68b5b
 
