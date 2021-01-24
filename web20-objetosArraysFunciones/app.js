@@ -6,7 +6,7 @@ console.log(string2);
 console.log(string1);
 let array1 = [4,5,6,7,8,9,10];
 let array2 = array1;
-array1[0]=5;
+array1[0]= 5;
 
 console.log(array1);
 console.log(array2);
@@ -16,7 +16,7 @@ let objeto1 = {
     "propiedad2" : "Hola"
 }
 
-let objetoclon = { ...objeto1};
+let objetoclon = { ...objeto1 }
 
 objetoclon.propiedad1 = 10;
 
@@ -41,20 +41,20 @@ let objetoB = {
 }
 let simple = [4,5,6,7,8];
 
-let objetoAB = { ...objetoB, ...objetoA};
+let objetoAB = { ...objetoB, ...objetoA };
 
 console.log(objetoAB);
 
-let doble = simple.map( x => x*2 );
+let doble = simple.map( x => x * 2 );
 
 let numGrandes = simple.filter( elemento => elemento > 6 );
 
 let numGrandes2 = simple.filter( function (e){
-    return e>6;
+    return e > 6;
 });
 
 function doblar(x){
-    return x*2;
+    return x * 2;
 }
 
 console.log(simple);
@@ -65,50 +65,84 @@ console.log(numGrandes2);
 
 //crear un array con nombres de mujeres
 //con map crear otro array que añada "Doña" delante de cada nombre
-let nombreMujeres = ["Susana","Rocio","Aguadulce","Sara","Eva"];
-let apelativos = nombreMujeres.map (nombre => "Dña "+nombre);
+let nombresMujer = ["Maria","Laura","Eva","Rosa","Julia"];
+let nombresConTratamiento = nombresMujer.map (e => "Doña " + e);
 
-console.log(apelativos);
-console.log(nombreMujeres);
+let nombresConTratamiento2 = nombresMujer.map(
+    function (nombre) {
+        return "Doña " + nombre;
+    }
+);
 
-//filtrar los nombres cortos y ponerlos en otro array
+function anyadirTratamiento(nombre, genero) {
+    ret = nombre;
+    if (genero == 'H') {
+        ret = "Don " + nombre;
+    } else if (genero == 'M') {
+        ret = "Doña " + nombre;
+    }
+    return ret;
+}
 
-let nombrecortos = nombreMujeres.filter( nombre => nombre.length <5);
+let nombresConTratamiento3 = nombresMujer.map(function (e) { return anyadirTratamiento(e, 'M')});
 
-console.log(nombrecortos);
+let nombresConTratamiento4 = nombresMujer.map(e => anyadirTratamiento(e, 'M'));
+console.log(nombresConTratamiento);
+console.log(nombresConTratamiento2);
+console.log(nombresConTratamiento3);
+console.log(nombresConTratamiento4);
 
-// function reduce
+let nombresCortos = nombresMujer.filter(nombre => nombre.length < 4);
+console.log(nombresCortos);
 
-let arrayNumeros= [4,5,6,23,2,16,8,7];
-let suma = arrayNumeros.reduce( (a,b) => a+b);console.log(suma);
+let nombresCortos2 = nombresMujer.filter(
+    function (e) {
+        return e.length < 4
+    }
+);
+console.log(nombresCortos2);
 
+let nombresCortos3 = nombresMujer.filter(nombreCorto);
+console.log(nombresCortos3);
+function nombreCorto(nombre) {
+    let ret = false;
+    if (nombre.length < 4) {
+        ret = true;
+    }
+    return ret;
+}
+
+
+let arrayNumeros = [4, 5, 6, 7, 8, 9, 23, 1];
+let suma = arrayNumeros.reduce((a, b) => a + b);
 console.log(suma);
 
 let n = 2;
-let esPar = (n%2==0) ?true:false;
+let esPar = (n % 2 == 0) ? true : false;
 
-if (n%2 == 0){
+if (n % 2 == 0) {
     esPar = true;
-}else{
+} else {
     esPar = false;
 }
-console.log("n es dos? "+ (n==2?"Si":"No"));
 
-let maximo = arrayNumeros.reduce((a,b) => a>b?a:b);
+console.log("n es dos? " + (n == 2 ? "Sí" : "No"));
+
+let maximo = arrayNumeros.reduce((a, b) => a < b ? a : b);
 console.log(maximo);
 
-let avg = suma/arrayNumeros.length;
+let avg = suma / arrayNumeros.length;
 console.log(avg);
 
-let numerosordenados = arrayNumeros.sort(comparacion);
-console.log(numerosordenados);
+let numerosOrdenados = arrayNumeros.sort(comparacion);
+console.log(numerosOrdenados);
 
-function comparacion(x,y){
-    if(x<y){
+function comparacion(x, y) {
+    if (x > y) {
         return -1;
-    }else if(x>y){
+    } else if (x < y) {
         return 1;
-    }else{
+    } else {
         return 0;
     }
 }
@@ -125,7 +159,7 @@ let coches = [
         "anyo": 1995
     },
     {
-        "marca": "Citroen",
+        "marca": "Citroën",
         "modelo": "AX",
         "anyo": 1991
     },
@@ -135,32 +169,21 @@ let coches = [
         "anyo": 1989
     }
 ]
+
 let cochesOrdenados = coches.sort(
-    
-    function(coche1,coche2){
-        if (coche1.anyo < coche2.anyo){
+    function (coche1, coche2) {
+        if (coche1.anyo < coche2.anyo) {
             return -1;
-        }else if (coche1.anyo > coche2.anyo){
+        } else if (coche1.anyo > coche2.anyo) {
             return 1;
-        }else{
+        } else {
             return 0;
         }
     }
 );
 
-console.log(cochesOrdenados2);
-
-let cochesOrdenados2 = coches.sort(
-    
-    function(coche1,coche2){
-        if (coche1.marca < coche2.marca){
-            return -1;
-        }else if (coche1.marca > coche2.marca){
-            return 1;
-        }else{
-            return 0;
-        }
-    }
-);
-
-console.log(cochesOrdenados2);
+console.log(cochesOrdenados);
+//otra manera mas sencilla, el orden de los parámetros nos dirá si de 
+//mayor a menor o de menor a mayor.
+cOrdenados2 = coches.sort((coche2,coche1) => coche1.anyo-coche2.anyo);
+console.log(cOrdenados2);
