@@ -16,4 +16,4 @@ let objeto = {hola: "mundo"}
 
 console.log(objeto);
 console.log(JSON.stringify(objeto));
-console.log(persona.nombre);
+console.log(persona.apellido);
