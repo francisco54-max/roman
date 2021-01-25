@@ -6,10 +6,9 @@ app.set('puerto', 3000);
 
 app.get('/', 
     function (req,res) {
-        let pathToIndex = 
-            path.join(__dirname, "form.html");
-            
-        res.sendFile(pathToIndex);      
+        res.sendFile( path.join(__dirname, "form.html");
+
+             
     }
 );
 
